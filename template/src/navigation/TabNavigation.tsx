@@ -8,8 +8,8 @@ import FeaturesScreen from '@screens/FeaturesScreen';
 import {useTranslation} from 'react-i18next';
 import {TranslationKeys} from '@services/localization/keys';
 // styles
-import BookmarkIcon from '@assets/Bookmark';
-import BookIcon, {CustomSvgProps} from '@assets/Book';
+import BookmarkIcon from '@src/assets/icons/Bookmark';
+import BookIcon, {CustomSvgProps} from '@src/assets/icons/Book';
 import {useColors} from '@hooks/useColors';
 import {defaultFont, defaultHeaderTitleAlign} from '@fixtures/defaults';
 // types

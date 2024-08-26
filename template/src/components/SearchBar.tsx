@@ -13,8 +13,8 @@ import {TranslationKeys} from '@services/localization/keys.ts';
 // animations
 import Animated, {ZoomIn, ZoomOut} from 'react-native-reanimated';
 // styles
-import SearchIcon from '@assets/Search.tsx';
-import ClearIcon from '@assets/Clear.tsx';
+import SearchIcon from '@src/assets/icons/Search';
+import ClearIcon from '@src/assets/icons/Clear';
 import {useColors} from '@hooks/useColors.ts';
 import {hp} from '@services/dimensions/dimensions.ts';
 

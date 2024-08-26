@@ -10,8 +10,8 @@ import {
   TextInputProps,
 } from 'react-native';
 // styles
-import EyeIcon from '@assets/Eye.tsx';
-import EyeOffIcon from '@assets/EyeOff.tsx';
+import EyeIcon from '@src/assets/icons/Eye';
+import EyeOffIcon from '@src/assets/icons/EyeOff';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
