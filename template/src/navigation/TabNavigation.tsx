@@ -2,19 +2,19 @@ import React from 'react';
 // navigation
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 // screens
-import WelcomeScreen from '../screens/WelcomeScreen';
-import FeaturesScreen from '../screens/FeaturesScreen';
+import WelcomeScreen from '@screens/WelcomeScreen';
+import FeaturesScreen from '@screens/FeaturesScreen';
 // localization
 import {useTranslation} from 'react-i18next';
-import {TranslationKeys} from '../services/localization/keys';
+import {TranslationKeys} from '@services/localization/keys';
 // styles
-import BookmarkIcon from '../assets/Bookmark';
-import BookIcon, {CustomSvgProps} from '../assets/Book';
-import {useColors} from '../hooks/useColors';
-import {defaultFont, defaultHeaderTitleAlign} from '../fixtures/defaults';
+import BookmarkIcon from '@assets/Bookmark';
+import BookIcon, {CustomSvgProps} from '@assets/Book';
+import {useColors} from '@hooks/useColors';
+import {defaultFont, defaultHeaderTitleAlign} from '@fixtures/defaults';
 // types
-import {ScreenNames, TabsParamList} from '../types/navigation';
-import {ColorTheme} from '../assets/colors/colors';
+import {ScreenNames, TabsParamList} from '@appTypes/navigation';
+import {ColorTheme} from '@assets/colors/colors';
 
 const TabIcon = ({
   focused,

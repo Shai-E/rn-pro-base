@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
   View,
+  Platform,
 } from 'react-native';
 // redux
 import {useAppSelector} from '@hooks/reduxHooks';
@@ -35,7 +36,7 @@ const ScreenContainer = ({
   const colors = useColors();
   const isDarkMode = useAppSelector(selectIsDarkMode);
   const DynamicView = isScrollable ? View : SafeAreaView;
-
+  
   const handleChangeNavigationBarColor = async () => {
     try {
       changeNavigationBarColor(colors.primary);
@@ -45,7 +46,7 @@ const ScreenContainer = ({
   };
 
   useEffect(() => {
-    handleChangeNavigationBarColor();
+    Platform.OS === 'android' && handleChangeNavigationBarColor();
   }, [isDarkMode]);
 
   return (

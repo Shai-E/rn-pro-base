@@ -3,15 +3,15 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 // navigators
-import TabNavigation from './TabNavigation';
-import MainNavigation from './MainNavigation';
+import TabNavigation from '@navigation/TabNavigation';
+import MainNavigation from '@navigation/MainNavigation';
 // localization
 import {useTranslation} from 'react-i18next';
-import {TranslationKeys} from '../services/localization/keys';
+import {TranslationKeys} from '@services/localization/keys';
 // styles
-import {useColors} from '../hooks/useColors';
+import {useColors} from '@hooks/useColors';
 // types
-import {RootStackParamList, ScreenNames} from '../types/navigation';
+import {RootStackParamList, ScreenNames} from '@appTypes/navigation';
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 

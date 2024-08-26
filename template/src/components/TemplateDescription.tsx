@@ -9,8 +9,8 @@ import {TranslationKeys} from '@services/localization/keys';
 import {useColors} from '@hooks/useColors';
 
 const TemplateDescription: React.FC = () => {
-  const colors = useColors();
   const {t} = useTranslation();
+  const colors = useColors();
 
   const features = [
     TranslationKeys.feature1,

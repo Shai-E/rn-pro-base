@@ -2,14 +2,14 @@ import React from 'react';
 // navigation
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 // screens
-import AboutScreen from '../screens/AboutScreen';
+import AboutScreen from '@screens/AboutScreen';
 // localization
 import {useTranslation} from 'react-i18next';
-import {TranslationKeys} from '../services/localization/keys';
+import {TranslationKeys} from '@services/localization/keys';
 // styles
-import {useColors} from '../hooks/useColors';
+import {useColors} from '@hooks/useColors';
 // types
-import {ScreenNames} from '../types/navigation';
+import {ScreenNames} from '@appTypes/navigation';
 
 const Stack = createNativeStackNavigator();
 

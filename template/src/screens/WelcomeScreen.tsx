@@ -2,7 +2,7 @@ import React from 'react';
 import {ScrollView} from 'react-native';
 // components
 import ScreenContainer from '@reusable/ScreenContainer';
-import TextElement from '@reusable/TextElement';
+import TextElement from '@components/reusable/TextElement';
 import TemplateDescription from '@components/TemplateDescription';
 import SeparatorElement from '@reusable/SeparatorElement';
 // localization

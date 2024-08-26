@@ -20,6 +20,7 @@ const FeaturesList: React.FC = () => {
   const handleDarkModeChange = () => {
     dispatch(toggleDarkMode());
   };
+
   return (
     <View>
       <SwitchElement
