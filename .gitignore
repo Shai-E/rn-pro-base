@@ -21,6 +21,7 @@ template/*.hmap
 template/*.ipa
 template/*.xcuserstate
 template/**/.xcode.env.local
+template/ios/build
 
 # Android/IntelliJ
 #
@@ -33,6 +34,7 @@ template/*.hprof
 template/.cxx/
 template/*.keystore
 !template/debug.keystore
+template/android/app/build
 
 # node.js
 #
