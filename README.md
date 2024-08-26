@@ -54,7 +54,11 @@ Welcome to **RN-Pro-Base**, a robust and scalable React Native template designed
 2. **Install Dependencies**:
    ```bash
    npm install
+   ```
+   ```bash
    cd ios && pod install && cd ..
+   ```
+   ```bash
    cd android && ./gradlew clean && cd ..
    ```
 
@@ -108,7 +112,7 @@ The navigation setup is handled by React Navigation. Modify the stack and tab na
 
 Contributions are welcome! Please open an issue or submit a pull request with any improvements or suggestions.
 
-*  **Clone the Repository**:
+**Clone the Repository**:
    ```bash
    git clone https://github.com/Shai-E/rn-pro-base.git
    ```

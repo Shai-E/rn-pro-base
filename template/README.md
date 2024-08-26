@@ -9,7 +9,11 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 ```bash
 npm install
+```
+```bash
 cd ios && pod install && cd ..
+```
+```bash
 cd android && ./gradlew clean && cd ..
 ```
 
@@ -66,7 +70,7 @@ Now that you have successfully run the app, let's modify it.
 
    * For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
 
-3. Adding new fonts requires putting the font files in the fonts directory found in `src/assets/fonts`, then running:
+3. Adding new fonts requires putting the font files in the fonts directory found in `/src/assets/fonts`, then running:
 
 ```bash
 npm run link-assets
