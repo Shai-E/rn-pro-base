@@ -1,19 +1,80 @@
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli) with the [**rn-pro-base**](https://github.com/Shai-E/rn-pro-base) template.
 
-# MyCustomTemplate
 
-Welcome to **MyCustomTemplate**, a robust and scalable React Native template designed to jumpstart your mobile app development. This template is built with TypeScript, Redux Toolkit, React Navigation, and more to provide a strong foundation for building high-quality mobile applications.
+# Getting Started
 
-## Features
+>**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
-- **TypeScript**: Ensures type safety and scalable code.
-- **React Navigation**: Provides intuitive and flexible screen navigation.
-- **State Management**: Leverage Redux Toolkit, Redux Saga, and Redux Persist to handle complex state logic and persistence.
-- **AsyncStorage**: Efficient local data storage with React Native AsyncStorage.
-- **i18next**: Seamless internationalization support.
-- **React Native SVG**: Handle scalable vector graphics with ease.
-- **Reanimated 3 & React Native Gesture Handler**: Powerful animations and gesture controls.
-- **Built-in Themes**: Support for both dark mode and light mode themes.
-- **Reusable Components**: Includes components like `TextElement`, `ButtonElement`, `InputElement`, `SwitchElement`, `LinkElement`, and more.
+## Step 1: Install Dependencies
+
+```bash
+npm install
+cd ios && pod install && cd ..
+cd android && ./gradlew clean && cd ..
+```
+
+## Step 2: Start the Metro Server
+
+First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+
+To start Metro, run the following command from the _root_ of your React Native project:
+
+```bash
+# using npm
+npm start
+
+# OR using Yarn
+yarn start
+```
+
+## Step 3: Start your Application
+
+Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+
+### For Android
+
+```bash
+# using npm
+npm run android
+
+# OR using Yarn
+yarn android
+```
+
+### For iOS
+
+```bash
+# using npm
+npm run ios
+
+# OR using Yarn
+yarn ios
+```
+
+If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+
+This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+
+## Step 4: Modifying your App
+
+Now that you have successfully run the app, let's modify it.
+
+1. Open `App.tsx` in your text editor of choice and edit some lines.
+
+2. 
+   * For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+
+   * For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+
+3. Adding new fonts requires putting the font files in the fonts directory found in `src/assets/fonts`, then running:
+
+```bash
+npm run link-assets
+```
+
+## Congratulations! :tada:
+
+You've successfully run and modified your React Native App. :partying_face:
 
 ## Project Structure
 
@@ -36,72 +97,21 @@ Welcome to **MyCustomTemplate**, a robust and scalable React Native template des
 └── README.md        # This file
 ```
 
-## Getting Started
+### Now what?
 
-### Prerequisites
+- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
+- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
 
-- [Node.js](https://nodejs.org/) >= 18.x
-- [React Native CLI](https://reactnative.dev/docs/environment-setup)
-- [Android Studio](https://developer.android.com/studio) or [Xcode](https://developer.apple.com/xcode/) for iOS development.
+# Troubleshooting
 
-### Installation
+If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/Shai-E/rn-pro-base.git
-   cd MyCustomTemplate
-   ```
+# Learn More
 
-2. **Install Dependencies**:
-   ```bash
-   npm install
-   ```
+To learn more about React Native, take a look at the following resources:
 
-3. **Link Assets**:
-   ```bash
-   npm run link-assets
-   ```
-
-4. **Run the Project**:
-   - For Android:
-     ```bash
-     npm run android
-     ```
-   - For iOS:
-     ```bash
-     npm run ios
-     ```
-
-## Usage
-
-### Components
-
-- **`TextElement`**: Custom text component with theme support.
-- **`ButtonElement`**: Reusable button component with custom styling options.
-- **`InputElement`**: Custom input field component.
-- **`SwitchElement`**: Cross-platform switch component.
-- **`LinkElement`**: Custom link component with navigation support.
-
-### State Management
-
-The template is equipped with Redux Toolkit, Redux Saga, and Redux Persist to efficiently manage and persist the application state.
-
-### Internationalization
-
-Easily add new languages and handle translations using `i18next` and `react-i18next`.
-
-### Theming
-
-Built-in support for dark and light mode. Customize the themes in the `/src/themes` directory.
-
-### Navigation
-
-The navigation setup is handled by React Navigation. Modify the stack and tab navigation in the `/src/navigation` directory.
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request with any improvements or suggestions.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+- [React Native Website](https://reactnative.dev) - learn more about React Native.
+- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
+- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
+- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
+- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
