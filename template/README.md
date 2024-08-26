@@ -22,14 +22,15 @@ Welcome to **MyCustomTemplate**, a robust and scalable React Native template des
 ├── /android         # Android-specific files
 ├── /ios             # iOS-specific files
 ├── /src             # Application source code
-│   ├── /components  # Reusable components
-│   ├── /navigation  # Navigation setup
-│   ├── /store       # Redux-related files
-│   ├── /screens     # Application screens
-│   ├── /hooks       # Custom hooks
-│   ├── /utils       # Utilities
-│   ├── /types       # Application types and interfaces
 │   └── /assets      # Images, fonts, etc.
+│   ├── /components  # Reusable components
+│   ├── /fixtures    # Constats
+│   ├── /hooks       # Custom hooks
+│   ├── /navigation  # Navigation setup
+│   ├── /screens     # Application screens
+│   ├── /store       # Redux-related files
+│   ├── /types       # Application types and interfaces
+│   ├── /utils       # Utilities
 ├── App.tsx          # Entry point for the app
 ├── package.json     # Project dependencies and scripts
 └── README.md        # This file
@@ -47,7 +48,7 @@ Welcome to **MyCustomTemplate**, a robust and scalable React Native template des
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/MyCustomTemplate.git
+   git clone https://github.com/Shai-E/rn-pro-base.git
    cd MyCustomTemplate
    ```
 
