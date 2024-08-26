@@ -111,7 +111,6 @@ Contributions are welcome! Please open an issue or submit a pull request with an
 *  **Clone the Repository**:
    ```bash
    git clone https://github.com/Shai-E/rn-pro-base.git
-   cd MyCustomTemplate
    ```
 
 ## License
