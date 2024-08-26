@@ -1,7 +1,7 @@
 
-# MyCustomTemplate
+# RN-Pro-Base
 
-Welcome to **MyCustomTemplate**, a robust and scalable React Native template designed to jumpstart your mobile app development. This template is built with TypeScript, Redux Toolkit, React Navigation, and more to provide a strong foundation for building high-quality mobile applications.
+Welcome to **RN-Pro-Base**, a robust and scalable React Native template designed to jumpstart your mobile app development. This template is built with TypeScript, Redux Toolkit, React Navigation, and more to provide a strong foundation for building high-quality mobile applications.
 
 ## Features
 
