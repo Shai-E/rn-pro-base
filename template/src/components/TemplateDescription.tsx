@@ -1,12 +1,12 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 // components
-import TextElement from '../components/reusable/TextElement';
+import TextElement from '@reusable/TextElement';
 // localization
 import {useTranslation} from 'react-i18next';
-import {TranslationKeys} from '../services/localization/keys';
+import {TranslationKeys} from '@services/localization/keys';
 // styles
-import {useColors} from '../hooks/useColors';
+import {useColors} from '@hooks/useColors';
 
 const TemplateDescription: React.FC = () => {
   const colors = useColors();

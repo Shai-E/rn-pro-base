@@ -1,5 +1,6 @@
 import React from 'react';
 import {StatusBar} from 'react-native';
+// hooks
 import {useIsFocused} from '@react-navigation/native';
 
 interface StatusBarElementType {

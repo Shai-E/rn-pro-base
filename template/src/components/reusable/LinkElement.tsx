@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, Linking} from 'react-native';
 // Components
-import TextElement from './TextElement';
+import TextElement from '@reusable/TextElement';
 // styles
-import {useColors} from '../../hooks/useColors';
+import {useColors} from '@hooks/useColors';
 
 interface LinkElementType {
   children: JSX.Element | JSX.Element[] | string;

@@ -1,21 +1,22 @@
 {
-  "name": "my-custom-template",
-  "version": "1.0.0",
-  "description": "A custom React Native template for streamlined development.",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest"
-  },
-  "files": [
-    "template",
-    "template.config.js"
-  ],
-  "keywords": [
-    "react-native",
-    "template",
-    "custom",
-    "boilerplate"
-  ],
-  "author": "Shai Eliav <eliav.dev@gmail.com>",
-  "license": "MIT"
+    "name": "rn-pro-base",
+    "version": "1.0.0",
+    "description": "A custom React Native template for streamlined development.",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "files": [
+        "README.md",
+        "template",
+        "template.config.js"
+    ],
+    "keywords": [
+        "react-native",
+        "template",
+        "custom",
+        "boilerplate"
+    ],
+    "author": "Shai Eliav <eliav.dev@gmail.com>",
+    "license": "MIT"
 }

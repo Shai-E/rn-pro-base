@@ -9,14 +9,14 @@ import {
 } from 'react-native';
 // localization
 import {useTranslation} from 'react-i18next';
-import {TranslationKeys} from '../services/localization/keys.ts';
+import {TranslationKeys} from '@services/localization/keys.ts';
 // animations
 import Animated, {ZoomIn, ZoomOut} from 'react-native-reanimated';
 // styles
-import SearchIcon from '../assets/Search.tsx';
-import ClearIcon from '../assets/Clear.tsx';
-import {useColors} from '../hooks/useColors.ts';
-import {hp} from '../services/dimensions/dimensions.ts';
+import SearchIcon from '@assets/Search.tsx';
+import ClearIcon from '@assets/Clear.tsx';
+import {useColors} from '@hooks/useColors.ts';
+import {hp} from '@services/dimensions/dimensions.ts';
 
 type SearchBarProps = {
   searchKey: string;

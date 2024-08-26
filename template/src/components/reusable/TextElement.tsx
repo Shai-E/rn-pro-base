@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, StyleSheet, TextProps, View} from 'react-native';
 // fixtures
-import {defaultFont, fontSizes, FontSizesType} from '../../fixtures/defaults';
+import {defaultFont, fontSizes, FontSizesType} from '@fixtures/defaults';
 
 interface TextElementProps extends TextProps {
   style?: any;

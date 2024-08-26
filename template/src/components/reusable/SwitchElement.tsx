@@ -6,10 +6,10 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 // components
-import TextElement from './TextElement';
+import TextElement from '@reusable/TextElement';
 // styles
-import {useColors} from '../../hooks/useColors';
-import {wp} from '../../services/dimensions/dimensions';
+import {useColors} from '@hooks/useColors';
+import {wp} from '@services/dimensions/dimensions';
 
 type SwitchElementProps = {
   label: string;

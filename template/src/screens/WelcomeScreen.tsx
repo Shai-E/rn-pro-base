@@ -1,19 +1,19 @@
 import React from 'react';
 import {ScrollView} from 'react-native';
 // components
-import ScreenContainer from '../components/ScreenContainer';
-import TextElement from '../components/reusable/TextElement';
-import TemplateDescription from '../components/TemplateDescription';
-import SeparatorElement from '../components/reusable/SeperatorElement';
+import ScreenContainer from '@reusable/ScreenContainer';
+import TextElement from '@reusable/TextElement';
+import TemplateDescription from '@components/TemplateDescription';
+import SeparatorElement from '@reusable/SeparatorElement';
 // localization
 import {useTranslation} from 'react-i18next';
-import {TranslationKeys} from '../services/localization/keys';
+import {TranslationKeys} from '@services/localization/keys';
 // hooks
-import {useNavigateToScreenCB} from '../hooks/navigationHooks';
+import {useNavigateToScreenCB} from '@hooks/navigationHooks';
 // styles
-import {useColors} from '../hooks/useColors';
+import {useColors} from '@hooks/useColors';
 // types
-import {ScreenNames} from '../types/navigation';
+import {ScreenNames} from '@appTypes/navigation';
 
 const WelcomeScreen: React.FC = () => {
   const colors = useColors();

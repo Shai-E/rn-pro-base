@@ -1,16 +1,16 @@
 import React from 'react';
 import {View} from 'react-native';
 // components
-import SwitchElement from './reusable/SwitchElement';
+import SwitchElement from '@reusable/SwitchElement';
 // redux
-import {useAppDispatch, useAppSelector} from '../hooks/reduxHooks';
-import {toggleDarkMode} from '../store/reducers/constantsReducer';
-import {selectIsDarkMode} from '../store/selectors';
+import {useAppDispatch, useAppSelector} from '@hooks/reduxHooks';
+import {toggleDarkMode} from '@store/reducers/constantsReducer';
+import {selectIsDarkMode} from '@store/selectors';
 // localization
-import {TranslationKeys} from '../services/localization/keys';
+import {TranslationKeys} from '@services/localization/keys';
 import {useTranslation} from 'react-i18next';
-import ButtonElement from './reusable/ButtonElement';
-import InputElement from './reusable/InputElement';
+import ButtonElement from '@reusable/ButtonElement';
+import InputElement from '@reusable/InputElement';
 
 const FeaturesList: React.FC = () => {
   const dispatch = useAppDispatch();

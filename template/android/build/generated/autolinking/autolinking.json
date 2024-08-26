@@ -28,6 +28,46 @@
         }
       }
     },
+    "lottie-ios": {
+      "root": "/Users/yuvaleliav/Desktop/MyCustomTemplate/template/node_modules/lottie-ios",
+      "name": "lottie-ios",
+      "platforms": {
+        "ios": {
+          "podspecPath": "/Users/yuvaleliav/Desktop/MyCustomTemplate/template/node_modules/lottie-ios/lottie-ios.podspec",
+          "version": "4.4.1",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": null
+      }
+    },
+    "lottie-react-native": {
+      "root": "/Users/yuvaleliav/Desktop/MyCustomTemplate/template/node_modules/lottie-react-native",
+      "name": "lottie-react-native",
+      "platforms": {
+        "ios": {
+          "podspecPath": "/Users/yuvaleliav/Desktop/MyCustomTemplate/template/node_modules/lottie-react-native/lottie-react-native.podspec",
+          "version": "6.7.2",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "/Users/yuvaleliav/Desktop/MyCustomTemplate/template/node_modules/lottie-react-native/android",
+          "packageImportPath": "import com.airbnb.android.react.lottie.LottiePackage;",
+          "packageInstance": "new LottiePackage()",
+          "buildTypes": [],
+          "libraryName": "lottiereactnative",
+          "componentDescriptors": [
+            "LottieAnimationViewComponentDescriptor"
+          ],
+          "cmakeListsPath": "/Users/yuvaleliav/Desktop/MyCustomTemplate/template/node_modules/lottie-react-native/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
     "react-native-gesture-handler": {
       "root": "/Users/yuvaleliav/Desktop/MyCustomTemplate/template/node_modules/react-native-gesture-handler",
       "name": "react-native-gesture-handler",
@@ -232,6 +272,33 @@
             "RNSVGUseComponentDescriptor"
           ],
           "cmakeListsPath": "/Users/yuvaleliav/Desktop/MyCustomTemplate/template/node_modules/react-native-svg/android/src/main/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
+    "react-native-webview": {
+      "root": "/Users/yuvaleliav/Desktop/MyCustomTemplate/template/node_modules/react-native-webview",
+      "name": "react-native-webview",
+      "platforms": {
+        "ios": {
+          "podspecPath": "/Users/yuvaleliav/Desktop/MyCustomTemplate/template/node_modules/react-native-webview/react-native-webview.podspec",
+          "version": "13.12.0",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "/Users/yuvaleliav/Desktop/MyCustomTemplate/template/node_modules/react-native-webview/android",
+          "packageImportPath": "import com.reactnativecommunity.webview.RNCWebViewPackage;",
+          "packageInstance": "new RNCWebViewPackage()",
+          "buildTypes": [],
+          "libraryName": "RNCWebViewSpec",
+          "componentDescriptors": [
+            "RNCWebViewComponentDescriptor"
+          ],
+          "cmakeListsPath": "/Users/yuvaleliav/Desktop/MyCustomTemplate/template/node_modules/react-native-webview/android/build/generated/source/codegen/jni/CMakeLists.txt",
           "cxxModuleCMakeListsModuleName": null,
           "cxxModuleCMakeListsPath": null,
           "cxxModuleHeaderName": null,
@@ -452,7 +519,8 @@
         },
         {
           "name": "--terminal <string>",
-          "description": "Launches the Metro Bundler in a new window using the specified terminal path."
+          "description": "Launches the Metro Bundler in a new window using the specified terminal path.",
+          "default": "vscode"
         },
         {
           "name": "--binary-path <string>",
@@ -607,7 +675,8 @@
         },
         {
           "name": "--terminal <string>",
-          "description": "Launches the Metro Bundler in a new window using the specified terminal path."
+          "description": "Launches the Metro Bundler in a new window using the specified terminal path.",
+          "default": "vscode"
         },
         {
           "name": "--appId <string>",

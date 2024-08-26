@@ -10,15 +10,15 @@ import {
   TextInputProps,
 } from 'react-native';
 // styles
-import EyeIcon from '../../assets/Eye.tsx';
-import EyeOffIcon from '../../assets/EyeOff.tsx';
+import EyeIcon from '@assets/Eye.tsx';
+import EyeOffIcon from '@assets/EyeOff.tsx';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-import {useColors} from '../../hooks/useColors';
-import {wp} from '../../services/dimensions/dimensions';
+import {useColors} from '@hooks/useColors';
+import {wp} from '@services/dimensions/dimensions';
 
 interface InputElementProps extends TextInputProps {
   placeholder: string;

@@ -1,7 +1,7 @@
 import React from 'react';
 // components
-import ScreenContainer from '../components/ScreenContainer';
-import FeaturesList from '../components/FeaturesList';
+import ScreenContainer from '@reusable/ScreenContainer';
+import FeaturesList from '@components/FeaturesList';
 
 const FeaturesScreen: React.FC = () => {
 

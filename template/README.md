@@ -84,21 +84,31 @@ You've successfully run and modified your React Native App. :partying_face:
 
 ```
 /MyCustomTemplate
-├── /android         # Android-specific files
-├── /ios             # iOS-specific files
-├── /src             # Application source code
-│   └── /assets      # Images, fonts, etc.
-│   ├── /components  # Reusable components
-│   ├── /fixtures    # Constats
-│   ├── /hooks       # Custom hooks
-│   ├── /navigation  # Navigation setup
-│   ├── /screens     # Application screens
-│   ├── /store       # Redux-related files
-│   ├── /types       # Application types and interfaces
-│   ├── /utils       # Utilities
-├── App.tsx          # Entry point for the app
-├── package.json     # Project dependencies and scripts
-└── README.md        # This file
+├── /__tests__                         # Test files
+├── /android                           # Android-specific files
+├── /ios                               # iOS-specific files
+├── /src                               # Application source code
+│   └── /assets                        # Images, fonts, etc.
+│   ├── /components                    # Reusable components
+│   │   ├── /reusable                  # Reusable components
+│   │   │   ├── ButtonElement.tsx
+│   │   │   ├── InputElement.tsx
+│   │   │   ├── LinkElement.tsx
+│   │   │   ├── ScreenContainer.tsx
+│   │   │   ├── SeparatorElement.tsx
+│   │   │   ├── StatusBarElement.tsx
+│   │   │   ├── SwitchElement.tsx
+│   │   │   ├── TextElement.tsx
+│   ├── /fixtures                      # Constats
+│   ├── /hooks                         # Custom hooks
+│   ├── /navigation                    # Navigation setup
+│   ├── /screens                       # Application screens
+│   ├── /store                         # Redux-related files
+│   ├── /types                         # Application types and interfaces
+│   ├── /utils                         # Utilities
+├── App.tsx                            # Entry point for the app
+├── package.json                       # Project dependencies and scripts
+└── README.md                          # This file
 ```
 
 ### Now what?

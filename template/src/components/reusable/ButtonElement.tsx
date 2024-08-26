@@ -8,12 +8,12 @@ import {
   ActivityIndicator,
 } from 'react-native';
 // components
-import TextElement from './TextElement';
+import TextElement from '@reusable/TextElement';
 // styles
-import {useColors} from '../../hooks/useColors';
-import {hp, wp} from '../../services/dimensions/dimensions';
+import {useColors} from '@hooks/useColors';
+import {hp, wp} from '@services/dimensions/dimensions';
 // types
-import {ButtonSizesType, FontSizesType} from '../../fixtures/defaults';
+import {ButtonSizesType, FontSizesType} from '@fixtures/defaults';
 
 type ButtonElementProps = {
   label: string;
