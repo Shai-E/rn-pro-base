@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {memo, useEffect, useRef, useState} from 'react';
 import {
   View,
   TextInput,
@@ -10,8 +10,8 @@ import {
   TextInputProps,
 } from 'react-native';
 // styles
-import EyeIcon from '@src/assets/icons/Eye';
-import EyeOffIcon from '@src/assets/icons/EyeOff';
+import EyeIcon from '@assets/icons/Eye';
+import EyeOffIcon from '@assets/icons/EyeOff';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -19,29 +19,60 @@ import Animated, {
 } from 'react-native-reanimated';
 import {useColors} from '@hooks/useColors';
 import {wp} from '@services/dimensions/dimensions';
+// form
+import {
+  Controller,
+  FieldError,
+  FieldValues,
+  RegisterOptions,
+} from 'react-hook-form';
 
 interface InputElementProps extends TextInputProps {
+  // mandatory props
+  name: string;
   placeholder: string;
+  // optional props
+  secureTextEntry?: boolean;
   leftIcon?: JSX.Element;
   rightIcon?: JSX.Element;
-  errorMessage?: string;
-  secureTextEntry?: boolean;
+  // optional props for form validation without form
+  handleInputChange?: (name: string, text: string) => void;
   validateInput?: (text: string) => boolean;
+  errorMessage?: string;
+  // optional props for form validation with react hook form
+  control?: any;
+  error?: FieldError;
+  rules?:
+    | Omit<
+        RegisterOptions<FieldValues, string>,
+        'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'
+      >
+    | undefined;
 }
 
 const InputElement: React.FC<InputElementProps> = ({
   placeholder,
   leftIcon,
   rightIcon,
+  error,
   errorMessage,
   validateInput,
   secureTextEntry,
+  handleInputChange,
+  name,
+  control,
+  rules,
   ...props
 }) => {
   const colors = useColors();
   const [text, setText] = useState('');
   const [isSecure, setIsSecure] = useState(secureTextEntry);
-  const [isValid, setIsValid] = useState(false);
+  const [isValid, setIsValid] = useState(true);
+  const isTouched = useRef(false);
+
+  useEffect(() => {
+    handleInputChange && handleInputChange(name, text);
+  }, [text]);
 
   const labelPositionY = useSharedValue(0);
   const labelPositionX = useSharedValue(0);
@@ -51,9 +82,12 @@ const InputElement: React.FC<InputElementProps> = ({
 
   const isLeftIcon = secureTextEntry || leftIcon;
 
-  const handleFocus = () => animateLabel(-20, 12, 10, isLeftIcon ? -45 : -10);
+  const handleFocus = () => {
+    animateLabel(-20, 12, 10, isLeftIcon ? -45 : -10);
+  };
   const handleBlur = () => !text && animateLabel(0, 16, 0, 0);
   const handleChangeText = (input: string) => {
+    isTouched.current = true;
     setText(input);
     validateInput && setIsValid(validateInput(input));
   };
@@ -76,16 +110,23 @@ const InputElement: React.FC<InputElementProps> = ({
       {translateX: labelPositionX.value},
     ],
     fontSize: labelSize.value,
-    backgroundColor: colors.primary,
     paddingHorizontal: labelPadding.value,
   }));
 
   const dynamicStyles = StyleSheet.create({
-    inputContainer: {
-      borderColor:
-        isValid && errorMessage ? colors.warning : colors.placeholder,
+    disabledContainer: {
+      backgroundColor: colors.placeholder,
     },
-    label: {left: isLeftIcon ? 50 : 15, color: colors.primaryText},
+    inputContainer: {
+      borderColor: (error || !isValid) ? colors.warning : colors.placeholder,
+    },
+    label: {left: isLeftIcon ? 50 : 15, color: colors.primaryText,
+      backgroundColor: colors.primary,
+    },
+    disabledLabel: {
+      left: isLeftIcon ? 50 : 15, color: colors.primaryText,
+      backgroundColor: colors.placeholder,
+    },
     input: {
       color: colors.primaryText,
     },
@@ -94,34 +135,62 @@ const InputElement: React.FC<InputElementProps> = ({
     },
   });
 
-  const displayLeftIcon = isLeftIcon && <Pressable
-  onPress={() => {
-    inputRef.current?.focus();
-    secureTextEntry && setIsSecure(prev => !prev);
-  }}
-  style={styles.icon}>
-  {secureTextEntry ? (
-    isSecure ? (
-      <EyeOffIcon height={22} width={22} color={colors.primaryText} />
-    ) : (
-      <EyeIcon height={22} width={22} color={colors.primaryText} />
-    )
-  ) : (
-    leftIcon
-  )}
-</Pressable>;
+  const displayLeftIcon = isLeftIcon && (
+    <Pressable
+      onPress={() => {
+        inputRef.current?.focus();
+        secureTextEntry && setIsSecure(prev => !prev);
+      }}
+      style={styles.icon}>
+      {secureTextEntry ? (
+        isSecure ? (
+          <EyeOffIcon height={22} width={22} color={colors.primaryText} />
+        ) : (
+          <EyeIcon height={22} width={22} color={colors.primaryText} />
+        )
+      ) : (
+        leftIcon
+      )}
+    </Pressable>
+  );
 
   const displayRightIcon = rightIcon && (
     <View style={styles.icon}>{rightIcon}</View>
   );
 
   const animatedLabel = (
-    <Animated.Text style={[styles.label, dynamicStyles.label, labelStyle]}>
+    <Animated.Text style={[styles.label, props.editable === false ? dynamicStyles.disabledLabel : dynamicStyles.label, labelStyle]}>
       {placeholder}
     </Animated.Text>
   );
 
-  const input = (
+  const input = control ? (
+    <Controller
+      name={name}
+      control={control}
+      rules={rules}
+      render={({field: {onChange, onBlur, value}}) => {
+        return (
+          <TextInput
+            ref={inputRef}
+            style={[styles.input, dynamicStyles.input]}
+            onFocus={handleFocus}
+            onBlur={() => {
+              handleBlur();
+              onBlur();
+            }}
+            onChangeText={onChangeTextValue => {
+              handleChangeText(onChangeTextValue);
+              onChange(onChangeTextValue);
+            }}
+            secureTextEntry={isSecure}
+            value={value}
+            {...props}
+          />
+        );
+      }}
+    />
+  ) : (
     <TextInput
       ref={inputRef}
       style={[styles.input, dynamicStyles.input]}
@@ -129,21 +198,20 @@ const InputElement: React.FC<InputElementProps> = ({
       onBlur={handleBlur}
       onChangeText={handleChangeText}
       secureTextEntry={isSecure}
-      value={text}
       {...props}
     />
   );
 
-  const displayError = !isValid && errorMessage && (
+  const displayError = (error?.message || !isValid) && (
     <Text style={[styles.errorText, dynamicStyles.errorText]}>
-      {errorMessage}
+      {error?.message || errorMessage || 'Invalid input'}
     </Text>
   );
-
+  
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
-        <View style={[styles.inputContainer, dynamicStyles.inputContainer]}>
+        <View style={[styles.inputContainer, props.editable === false ? dynamicStyles.disabledContainer : dynamicStyles.inputContainer]}>
           {displayLeftIcon}
           {animatedLabel}
           {input}
@@ -189,4 +257,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default InputElement;
+export default memo(InputElement);

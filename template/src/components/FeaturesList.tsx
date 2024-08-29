@@ -13,6 +13,10 @@ import ButtonElement from '@reusable/ButtonElement';
 import InputElement from '@reusable/InputElement';
 // animation
 import LottieView from 'lottie-react-native';
+// styles
+import {wp} from '@services/dimensions/dimensions';
+// form
+import {useForm} from 'react-hook-form';
 
 const FeaturesList: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -23,6 +27,21 @@ const FeaturesList: React.FC = () => {
     dispatch(toggleDarkMode());
   };
 
+  const {
+    control,
+    handleSubmit,
+    // watch,
+    formState: {errors},
+  } = useForm({
+    defaultValues: {
+      password: '',
+      name: '',
+      email: '',
+    },
+  });
+
+  const onSubmit = (data: any) => {console.log(data)};
+
   return (
     <View>
       <SwitchElement
@@ -32,23 +51,58 @@ const FeaturesList: React.FC = () => {
       />
       <ButtonElement
         label={t(TranslationKeys.about)}
-        onPress={() => {}}
+        onPress={handleSubmit(onSubmit)}
         buttonSize={'medium'}
       />
-      <InputElement placeholder={'test'} onChange={() => {}} secureTextEntry />
-      <InputElement placeholder={'test'} onChange={() => {}} />
-      <LottieView
-        style={styles.lottie}
-        source={require('@assets/animations/ripple.json')}
-        autoPlay
-        loop
+      <InputElement
+        placeholder={'password'}
+        name={'password'}
+        secureTextEntry={true}
+        control={control}
+        error={errors.password}
+        rules={{
+          required: true, minLength: 6, maxLength: 20, pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$/
+        }}
       />
+      <InputElement
+        placeholder={'name'}
+        name={'name'}
+        control={control}
+        rules={{
+          required: true,
+          minLength: 3,
+          maxLength: 20,
+          pattern: /^[a-zA-Z\s]*$/,
+        }}
+        error={errors.name}
+      />
+      <InputElement
+        placeholder={'email'}
+        name={'email'}
+      />
+        <View style={styles.lottieContainer}>
+          <LottieView
+            style={styles.lottie}
+            source={require('@assets/animations/forgotPassword.json')}
+            autoPlay
+            loop
+          />
+        </View>
+        <View style={styles.lottieContainer}>
+          <LottieView
+            style={styles.lottie}
+            source={require('@assets/animations/ripple.json')}
+            autoPlay
+            loop
+          />
+        </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   lottie: {width: 200, height: 200},
+  lottieContainer: {width: wp(100), height: 200, alignItems: 'center'},
 });
 
 export default FeaturesList;
