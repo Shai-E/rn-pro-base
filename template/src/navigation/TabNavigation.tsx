@@ -44,7 +44,7 @@ const TabNavigation = () => {
         },
         tabBarLabelStyle: {
           fontSize: 12,
-          fontFamily: defaultFont.familiy,
+          fontFamily: defaultFont.family,
         },
         tabBarActiveTintColor: colors.primaryText,
         tabBarInactiveTintColor: colors.placeholder,

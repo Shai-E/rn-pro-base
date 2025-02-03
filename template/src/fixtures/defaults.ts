@@ -11,7 +11,7 @@ export const fontSizes: Record<FontSizesType, number> = {
     xxl: 36,
 };
 
-export const defaultFont = {familiy: 'Poppins'};
+export const defaultFont = {family: 'Poppins'};
 
 export const defaultHeaderTitleAlign = 'center';
 

@@ -36,7 +36,7 @@ const TextElement: React.FC<TextElementProps> = ({
 
   const styles = StyleSheet.create({
     default: {
-      fontFamily: defaultFont.familiy,
+      fontFamily: defaultFont.family,
       fontSize: fontSizes[fontSize],
       marginHorizontal: 5,
       fontWeight: bold ? 'bold' : undefined,
