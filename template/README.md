@@ -91,9 +91,11 @@ You've successfully run and modified your React Native App. :partying_face:
 │   └── /assets                        # Images, fonts, etc.
 │   ├── /components                    # Reusable components
 │   │   ├── /reusable                  # Reusable components
+│   │   │   ├── BasicTextInput.tsx
 │   │   │   ├── ButtonElement.tsx
 │   │   │   ├── InputElement.tsx
 │   │   │   ├── LinkElement.tsx
+│   │   │   ├── OTPElement.tsx
 │   │   │   ├── ScreenContainer.tsx
 │   │   │   ├── SeparatorElement.tsx
 │   │   │   ├── StatusBarElement.tsx
