@@ -17,6 +17,8 @@ import LottieView from 'lottie-react-native';
 import {wp} from '@services/dimensions/dimensions';
 // form
 import {useForm} from 'react-hook-form';
+import OTPElement from './reusable/OTPElement';
+import {useColors} from '@src/hooks/useColors';
 
 const FeaturesList: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -41,6 +43,7 @@ const FeaturesList: React.FC = () => {
   });
 
   const onSubmit = (data: any) => {console.log(data)};
+  const Colors = useColors();
 
   return (
     <View>
@@ -75,6 +78,18 @@ const FeaturesList: React.FC = () => {
           pattern: /^[a-zA-Z\s]*$/,
         }}
         error={errors.name}
+      />
+        <OTPElement
+        numberOfDigits={4}
+        style={{
+          color: Colors.bright,
+          backgroundColor: Colors.oppositeBg,
+        }}
+        onOTPComplete={(otp: string) => {
+          console.log(otp);
+        }}
+        center
+        containerWidth={250}
       />
       <InputElement
         placeholder={'email'}
