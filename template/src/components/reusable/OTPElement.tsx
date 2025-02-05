@@ -16,6 +16,7 @@ interface OTPElementProps {
   center?: boolean;
   style?: any;
   containerStyle?: any;
+  filledUnderlineColor?: string;
   onOTPComplete?: (otp: string) => void;
 }
 
@@ -28,6 +29,7 @@ const OTPElement: React.FC<OTPElementProps> = ({
   center,
   style,
   containerStyle,
+  filledUnderlineColor,
 }) => {
   // Create state as an array of empty strings, one for each digit.
   const [otp, setOtp] = useState<string[]>(Array(numberOfDigits).fill(''));
@@ -75,7 +77,7 @@ const OTPElement: React.FC<OTPElementProps> = ({
   };
 
   return (
-    <View style={[styles.container, {alignSelf: center?'center':'auto'}, containerStyle]}>
+    <View style={[styles.container, {alignSelf: center ? 'center' : 'auto'}, containerStyle]}>
       {Array.from({length: numberOfDigits}).map((_, index) => (
         <BasicTextInput
           key={index}
@@ -89,6 +91,9 @@ const OTPElement: React.FC<OTPElementProps> = ({
             {
               width:
                 (containerWidth || Dimensions.get('window').width) / numberOfDigits - MARGIN * 2,
+            },
+            otp[index] && filledUnderlineColor && {
+              borderBottomColor: filledUnderlineColor,
             },
             style,
           ]}
